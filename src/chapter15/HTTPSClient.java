@@ -46,7 +46,8 @@ public class HTTPSClient {
             buffer.write(buff, 0, len);
         }
         //把字节数组转换为字符串
-        System.out.println(new String(buffer.toByteArray()));
+        String responseStr = new String(buffer.toByteArray())+"";
+        System.out.println(responseStr.length() > 1000 ? responseStr.substring(0, 1000) : responseStr);
 
         socket.close();
     }
