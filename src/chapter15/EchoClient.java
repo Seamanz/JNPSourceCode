@@ -11,6 +11,10 @@ public class EchoClient {
     private SSLSocket socket;
 
     public EchoClient() throws IOException {
+        String trustStore = System.getProperty("javax.net.ssl.trustStore", "");
+        System.out.println("trustStore = "+trustStore);
+        //设置服务端的安全证书文件路径，客户端的TrustManager通过此属性来判断是否信任服务端的安全证书
+        System.setProperty("javax.net.ssl.trustStore", "resources/test.keys");
         SSLSocketFactory factory = (SSLSocketFactory) SSLSocketFactory.getDefault();
         socket = (SSLSocket) factory.createSocket(host, port);
         String[] supported = socket.getSupportedCipherSuites();
