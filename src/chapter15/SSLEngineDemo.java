@@ -9,8 +9,8 @@ import java.security.KeyStore;
 public class SSLEngineDemo {
     private static boolean logging = true;
     //设置密钥库文件和信任库文件以及口令
-    private static String keyStoreFile = "test.keys";
-    private static String trustStoreFile = "test.keys";
+    private static String keyStoreFile = "resources/test.keys";
+    private static String trustStoreFile = "resources/test.keys";
     private static String passphrase = "654321";
     private static boolean resultOnce = true;
     private SSLContext sslc;
