@@ -7,7 +7,7 @@ import java.io.InputStream;
 import java.io.OutputStream;
 
 public class HTTPSClient {
-    String host = "www.usps.com";
+    String host = "github.com";
     int port = 443;
     SSLSocketFactory factory;
     SSLSocket socket;
@@ -43,8 +43,8 @@ public class HTTPSClient {
         while ((len = socketIn.read(buff)) != -1) {
             buffer.write(buff, 0, len);
         }
-        //把字节数组转换为字符串，并且只显示部分内容
-        System.out.println(new String(buffer.toByteArray()).substring(1, 1000));
+        //把字节数组转换为字符串
+        System.out.println(new String(buffer.toByteArray()));
 
         socket.close();
     }
