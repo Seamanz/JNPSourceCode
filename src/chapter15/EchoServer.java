@@ -11,7 +11,7 @@ public class EchoServer {
 
   public EchoServer() throws Exception {
     //输出跟踪日志
-    //System.setProperty("javax.net.debug", "all");
+    System.setProperty("javax.net.debug", "all");
     SSLContext context=createSSLContext();
     SSLServerSocketFactory factory=context.getServerSocketFactory();
     serverSocket =(SSLServerSocket)factory.createServerSocket(port);
