@@ -10,7 +10,7 @@ public class GlobalConfig implements Serializable {
     private GlobalConfig() {
         try {
             //加载配置信息
-            InputStream in = getClass().getResourceAsStream("resources/myapp.properties");
+            InputStream in = getClass().getResourceAsStream("/myapp.properties");
             properties.load(in);
             in.close();
         } catch (IOException e) {
