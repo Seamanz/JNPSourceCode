@@ -8,13 +8,13 @@ public class InvokeTester {
         Object invokeTester = classType.newInstance();
 
         //调用InvokeTester对象的add()方法
-        Method addMethod = classType.getMethod("add", new Class[]{int.class, int.class});
-        Object result = addMethod.invoke(invokeTester, new Object[]{new Integer(100), new Integer(200)});
-        System.out.println((Integer) result);
+        Method addMethod = classType.getMethod("add", int.class, int.class);
+        Object result = addMethod.invoke(invokeTester, 100, 200);
+        System.out.println(result);
 
         //调用InvokeTester对象的echo()方法
-        Method echoMethod = classType.getMethod("echo", new Class[]{String.class});
-        result = echoMethod.invoke(invokeTester, new Object[]{"Hello"});
+        Method echoMethod = classType.getMethod("echo", String.class);
+        result = echoMethod.invoke(invokeTester, "Hello");
         System.out.println((String) result);
     }
 
