@@ -18,8 +18,8 @@ public class SimpleClient {
         InputStream in = socket.getInputStream();
         ObjectInputStream ois = new ObjectInputStream(in);
 
-        //Call call=new Call("remotecall.HelloService","getTime",new Class[]{},new Object[]{});
-        Call call = new Call("remotecall.HelloService", "echo", new Class[]{String.class}, new Object[]{"Hello"});
+//        Call call=new Call("chapter10.remotecall.HelloService","getTime",new Class[]{},new Object[]{});
+        Call call = new Call("chapter10.remotecall.HelloService", "echo", new Class[]{String.class}, new Object[]{"Hello"});
         oos.writeObject(call);
         call = (Call) ois.readObject();
         System.out.println(call.getResult());

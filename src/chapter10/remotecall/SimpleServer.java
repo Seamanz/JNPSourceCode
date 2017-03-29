@@ -15,7 +15,7 @@ public class SimpleServer {
 
     public static void main(String args[]) throws Exception {
         SimpleServer server = new SimpleServer();
-        server.register("remotecall.HelloService", new HelloServiceImpl());
+        server.register("chapter10.remotecall.HelloService", new HelloServiceImpl());
         server.service();
     }
 
