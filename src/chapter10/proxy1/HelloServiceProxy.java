@@ -15,7 +15,7 @@ public class HelloServiceProxy implements HelloService {
         Connector connector = null;
         try {
             connector = new Connector(host, port);
-            Call call = new Call("proxy1.HelloService", "echo", new Class[]{String.class}, new Object[]{msg});
+            Call call = new Call("chapter10.proxy1.HelloService", "echo", new Class[]{String.class}, new Object[]{msg});
             connector.send(call);
             call = (Call) connector.receive();
             Object result = call.getResult();
@@ -34,7 +34,7 @@ public class HelloServiceProxy implements HelloService {
         Connector connector = null;
         try {
             connector = new Connector(host, port);
-            Call call = new Call("proxy1.HelloService", "getTime", new Class[]{}, new Object[]{});
+            Call call = new Call("chapter10.proxy1.HelloService", "getTime", new Class[]{}, new Object[]{});
             connector.send(call);
             call = (Call) connector.receive();
             Object result = call.getResult();
