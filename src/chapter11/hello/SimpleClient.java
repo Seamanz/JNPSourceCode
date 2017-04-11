@@ -17,7 +17,7 @@ public class SimpleClient {
         String url = "rmi://localhost/";
         try {
             System.setProperty("java.security.policy", SimpleClient.class.getResource("client.policy").toString());
-            System.setSecurityManager(new RMISecurityManager());
+            System.setSecurityManager(new SecurityManager());
             Context namingContext = new InitialContext();
             HelloService service1 = (HelloService) namingContext.lookup(url + "HelloService1");
             HelloService service2 = (HelloService) namingContext.lookup(url + "HelloService2");
