@@ -30,6 +30,7 @@ public class FlightImpl extends UnicastRemoteObject implements Flight {
     }
 
     public void setOrigin(String origin) throws RemoteException {
+        System.out.println("setOrigin()，origin=" + origin);
         this.origin = origin;
     }
 
@@ -38,6 +39,7 @@ public class FlightImpl extends UnicastRemoteObject implements Flight {
     }
 
     public void setDestination(String destination) throws RemoteException {
+        System.out.println("setDestination()，destination=" + destination);
         this.destination = destination;
     }
 
