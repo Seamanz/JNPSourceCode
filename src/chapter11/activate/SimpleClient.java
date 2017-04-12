@@ -22,9 +22,8 @@ public class SimpleClient {
 
             Class stubClass = service1.getClass();
             System.out.println("service1是" + stubClass.getName() + "的实例");
-            Class[] interfaces = stubClass.getInterfaces();
-            for (int i = 0; i < interfaces.length; i++)
-                System.out.println("存根类实现了" + interfaces[i].getName());
+            
+            for (Class anInterface : stubClass.getInterfaces()) System.out.println("存根类实现了" + anInterface.getName());
 
             System.out.println(service1.echo("hello"));
             System.out.println(service1.getTime());

@@ -9,10 +9,10 @@ import java.util.Date;
 public class HelloServiceImpl extends Activatable implements HelloService {
     private String name;
 
-    public HelloServiceImpl(ActivationID id, MarshalledObject data) throws RemoteException {
+    public HelloServiceImpl(ActivationID id, MarshalledObject<String> data) throws RemoteException {
         super(id, 0);
         try {
-            this.name = (String) data.get();
+            this.name = data.get();
         } catch (Exception e) {
             e.printStackTrace();
         }
